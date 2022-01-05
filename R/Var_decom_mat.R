@@ -1,0 +1,1 @@
+Var_decom_mat <- function(object) UseMethod(generic = "Var_decom_mat")
