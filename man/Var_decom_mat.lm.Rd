@@ -6,7 +6,7 @@
 \usage{
 Var_decom_mat.lm(object)
 }
-
 \arguments{
   \item{object}{a linear model }
 }
+\author{Georgios Kazantzidis, Malgorzata Roos}
