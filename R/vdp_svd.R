@@ -20,6 +20,7 @@ vdp_svd <- function(object){
       
     }
   }
-  res <- as.matrix(cbind(mu,t(pom)))
+  ci<- max(mu) / mu
+  res <- as.matrix(cbind(mu, ci, t(pom)))
   return(res)
 }
