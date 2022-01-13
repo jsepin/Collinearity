@@ -9,6 +9,8 @@ Var_decom_mat.matrix(object)
 }
 \arguments{
   \item{object}{a matrix}
+  \item{equilibration}{Logical. If true, the variance decompotision values for the equilibrated matrix are provided.}
+  
 }
 \author{Georgios Kazantzidis, Malgorzata Roos}
 \examples{
