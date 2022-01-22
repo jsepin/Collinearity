@@ -13,7 +13,7 @@ Var_decom_mat.matrix <- function(object, equilibration = TRUE){
     
     eq_mat_X <- round( vdp_svd( mat_X ), 3)
   }
-  
+  colnames(eq_mat_X) <- c("mu" ,"cond_ind", colnames(mat_X))
   
   return(eq_mat_X)
 }
