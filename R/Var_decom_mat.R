@@ -1,1 +1,1 @@
-Var_decom_mat <- function(object) UseMethod(generic = "Var_decom_mat")
+Var_decom_mat <- function(object, equilibration = TRUE) UseMethod(generic = "Var_decom_mat")

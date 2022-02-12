@@ -5,11 +5,11 @@
 }
 \description{Variance decomp}
 \usage{
-Var_decom_mat.matrix(object)
+Var_decom_mat.matrix(object, equilibration)
 }
 \arguments{
   \item{object}{a matrix}
-  \item{equilibration}{Logical. If true, the variance decompotision values for the equilibrated matrix are provided.}
+  \item{equilibration}{Logical. If TRUE, the design matrix is equilibrated first. Default value is TRUE}
   
 }
 \author{Georgios Kazantzidis, Malgorzata Roos}
