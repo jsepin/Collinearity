@@ -2,7 +2,8 @@ export("vdp_svd",
        "Var_decom_mat", 
        "Var_decom_mat.matrix",
        "Var_decom_mat.lm", 
-       "equilibrate_matrix" )
+       "equilibrate_matrix",
+       "n_finder")
 
 S3method("Var_decom_mat", "lm")
 S3method("Var_decom_mat", "matrix")
