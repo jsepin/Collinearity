@@ -1,6 +1,6 @@
 Package: Collinearity
 Type: Package
-Title: Impact of collinearity on Classical and Bayesian model choice criteria 
+Title: Tools for diagnostics and planning
 Version: 1.1.1
 Date: 2022-1-10
 Author: Georgios Kazantzidis [aut, cre], Malgorzata Roos [aut]
