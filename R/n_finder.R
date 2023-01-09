@@ -1,17 +1,14 @@
-#' Determine sample size or power
-#'
+# R: Function to determine sample size or power
 #' @param alpha Significance level
 #' @param n Sample size
 #' @param power Power
 #' @param Delta Relevant difference
 #' @param sigma Experimental error
-#' @param p number of parameters in whole model
+#' @param p Number of parameters in whole model
 #' @param voilen Variable Of Interest length
 #' @param trouble Diagonal entry of the inverted squared equilibrated design matrix
 #'
 #' @return Returns the power or sample size
-#' 
-
 
 n_finder <- function(power=NULL,n = NULL ,alpha=0.05, Delta, sigma, p=3 , voilen=0.5, trouble = 1){
   # power function
