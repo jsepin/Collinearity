@@ -5,7 +5,7 @@ export("vdp_svd",
        "equilibrate_matrix",
        "n_finder",
        "lmtograph",
-       "lmcopri")
+       "cofingerprint")
 
 S3method("Var_decom_mat", "lm")
 S3method("Var_decom_mat", "matrix")

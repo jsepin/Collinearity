@@ -7,6 +7,7 @@
   \item{power}{power of test (1 minus Type II error probability)}
   \item{n}{number of observations in total}
   \item{alpha}{significance level (Type I error probability)}
+  \item{alpha}{relevant effect of variable of interest}
   \item{sigma}{experimental error}
   \item{p}{number of parameters in whole model}
   \item{voilen}{variable of interest length}
