@@ -11,7 +11,7 @@
 #' @param col.node.nonvoi Color of non-voi node(s). Default is lightblue.
 #' @param radius_circle Size of node. Default is 0.2.
 #' @param subR2 Logical. If TRUE, the R2 values of the non-voi nodes are plotted as well. Default value is FALSE.
-#' @param lwdtovoi Linewidth of edges. Default is 1.
+#' @param lwdtovoi Maximum linewidth of edges. Default is 5.
 #' @param mar Margin of the plot. c(2.1, 2.1,2.1, 2.1)
 #' 
 #' @return Returns plot
@@ -28,7 +28,7 @@ lmtograph <- function(m,voi,
                       col.node.nonvoi = "lightblue",
                       radius_circle = 0.2,
                       subR2 = FALSE,
-                      lwdtovoi = 1, 
+                      lwdtovoi = 5, 
                       mar = c(2.1, 2.1,2.1, 2.1)
 ){
   
@@ -122,8 +122,6 @@ lmtograph <- function(m,voi,
   formula <- paste0("m_voi <- lm(data = data,`", gsub("[`]","",voi) ,"`~.-1 )")
   eval(parse(text = formula))
   
-  
-  
   beta <- round(summary(m_voi)$coef[,"Estimate"],2)
   wald <- round(summary(m_voi)$coef[,"t value"],2)
   dd$label[dd$label==gsub("[`]","",voi)] <- paste0(dd$label[dd$label==gsub("[`]","",voi)]," \n R2: ", round(summary(m_voi)$r.squared,3) )
@@ -139,8 +137,8 @@ lmtograph <- function(m,voi,
   label$srt[is.na(label$srt)] <- 0
   label[,c("x1","y1")] <- t(apply(cbind(label$x0, label$y0,radius_circle ),1, function(x){trimmer(x[1],x[2],r=x[3])}))
   
-  # linewidth of egde to voi
-  label$lwd <- abs(label$wald/min(label$wald))*lwdtovoi
+  # linewidth of egde to voi (lwdtovoi  = maximal lwd)
+  label$lwd <- label$wald/(max(abs(label$wald))/lwdtovoi)
   
   if(subR2){
     # R2 from the explanatory variables:
@@ -166,8 +164,6 @@ lmtograph <- function(m,voi,
   rownames(dd) <- rownames(dd)[s]
   dd$label <- dd$label[s]
   
-  
-  
   # plotting
   par(pty="s",cex = 1,mar = mar)
   plot(x = dd[,1], y = dd[,2], col = NA,
@@ -177,7 +173,7 @@ lmtograph <- function(m,voi,
   )
   for(i in 1:nrow(label)){
     with(label, arrows(x0 = x0[i], y0 = y0[i],x1 = x1[i], y1 = y1[i],
-                       col = col.edge.line, code = 2,length=0.3,angle = 5, lwd = lwd[i] ) )
+                       col = col.edge.line, code = 2, length=0.3, angle = 5, lwd = lwd[i] ) )
     with(label, text(x = xloc[i], y = yloc[i], labels = label[i], col = col.edge.text,
                      srt = srt[i], cex = cex.tovoi) )
   }
