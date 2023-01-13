@@ -6,7 +6,7 @@
 \arguments{
   \item{m}{Model fitted}
   \item{B}{Number of bootstrap samples to perform. Default is 100.}
-  \item{returndata}{Logical or data frame. If TRUE, the bootstrap data frame used for plotting is returned. This data frame can then be given as input so that bootstrapping, which may be time consuming does not have to be executed again. Default is FALSE.}
+  \item{returndata}{Logical or data frame. If TRUE, the bootstrap data frame used for plotting is returned. This data frame can then be given as input so that bootstrapping, which may be time consuming, does not have to be executed again. Default is FALSE.}
   \item{ncon}{Number of condition indices plotted}
   \item{main}{Title of the plot}
   \item{xdi}{Horizontal position of the variance decomposition proportions. Default is 0.}
@@ -21,4 +21,11 @@
 \value{}
 \references{}
 \author{Jerome Sepin, Malgorzata Roos}
+\examples{
+m <- lm(data = iris, Sepal.Length ~.)
+lmcopri(m, B = 100)
 
+# returndata: for time consuming bootstraps 
+dd <- lmcopri(m, B = 100, returndata = TRUE)
+lmcopri(m, B = 100, returndata = dd, ncon = 3)
+}

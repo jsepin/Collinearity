@@ -101,7 +101,9 @@ lmcopri <- function(m,
   radius <- ratio*va_decomp[,"cond_ind"]
   xcoor <- min(results$cond_nu) + cumsum(2*ratio*va_decomp[,"cond_ind"]) - ratio*va_decomp[,"cond_ind"]
   ycoor <- rep(max(results$wald) + max(radius), length(xcoor) )
-  color_node <- apply(va_decomp[,3:ncol(va_decomp)], 2, function(x) { t_col("blue", perc = (1-x)*100)})
+  color_node <- apply(va_decomp[,3:ncol(va_decomp),drop = F], 2, function(x) { t_col("blue", perc = (1-x)*100)})
+  
+  
   
   # plotting
   par(mfrow = c(1, p), oma=c(5,5,10,5), mar = rep(0, 4))
@@ -167,3 +169,5 @@ lmcopri <- function(m,
   }
   
 }
+
+
