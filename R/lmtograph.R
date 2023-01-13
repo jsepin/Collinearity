@@ -138,7 +138,8 @@ lmtograph <- function(m,voi,
   label[,c("x1","y1")] <- t(apply(cbind(label$x0, label$y0,radius_circle ),1, function(x){trimmer(x[1],x[2],r=x[3])}))
   
   # linewidth of egde to voi (lwdtovoi  = maximal lwd)
-  label$lwd <- label$wald/(max(abs(label$wald))/lwdtovoi)
+  label$lwd <- abs(label$wald)
+  label$lwd[label$lwd > lwdtovoi ] <- lwdtovoi
   
   if(subR2){
     # R2 from the explanatory variables:
