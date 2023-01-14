@@ -4,7 +4,7 @@ export("vdp_svd",
        "Var_decom_mat.lm", 
        "equilibrate_matrix",
        "n_finder",
-       "lmtograph",
+       "cotograph",
        "cofingerprint")
 
 S3method("Var_decom_mat", "lm")

@@ -1,8 +1,8 @@
-\name{lmtograph}
-\alias{lmtograph}
+\name{cotograph}
+\alias{cotograph}
 \title{Collinearity graph}
 \description{Compute the Wald statistics and the condition numbers of bootstrap samples to check the robustness of the results.}
-\usage{lmtograph(m, voi, equilibrate = FALSE, main = "Graph: Relation of explanatory variables\n Multivariable fitted Model", cex.node = 1, cex.tovoi = 1, cex.main = 1, col.edge.line = "blue", col.edge.text = "blue", col.node.voi = "green", col.node.nonvoi = "lightblue", radius_circle = 0.2, subR2 = FALSE, lwdtovoi = 1, mar = c(2.1, 2.1,2.1, 2.1))}
+\usage{cotograph(m, voi, equilibrate = FALSE, main = "Graph: Relation of explanatory variables\n Multivariable fitted Model", cex.node = 1, cex.tovoi = 1, cex.main = 1, col.edge.line = "blue", col.edge.text = "blue", col.node.voi = "green", col.node.nonvoi = "lightblue", radius_circle = 0.2, subR2 = FALSE, lwdtovoi = 1, mar = c(2.1, 2.1,2.1, 2.1))}
 \arguments{
   \item{m}{Model fitted}
   \item{voi}{Variable of interest specified as character}
@@ -25,11 +25,12 @@
 \author{Jerome Sepin, Malgorzata Roos}
 \examples{
 m <- lm(data = iris, Sepal.Length ~.)
-lmtograph(m=m, voi = "Petal.Length")
+cotograph(m=m, voi = "Petal.Length")
 
 # equilibrated design matrix
-lmtograph(m=m, voi = "Petal.Length", equilibrate = TRUE)
+cotograph(m=m, voi = "Petal.Length", equilibrate = TRUE)
 
 # with sub-R2 values added
-lmtograph(m=m, voi = "Petal.Length", subR2 = TRUE)
+m <- glm(data = iris, I(iris$Species=="versicolor") ~. ,family = binomial)
+cotograph(m=m, voi = "Petal.Length", subR2 = TRUE)
 }

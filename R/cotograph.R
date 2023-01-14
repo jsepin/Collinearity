@@ -16,7 +16,7 @@
 #' 
 #' @return Returns plot
 
-lmtograph <- function(m,voi,
+cotograph <- function(m,voi,
                       equilibrate = FALSE,
                       main = "Graph: Relation of explanatory variables\n Multivariable fitted Model",
                       cex.node = 1,
