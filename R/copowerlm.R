@@ -20,7 +20,7 @@ copowerlm <- function(power=NULL,n = NULL ,alpha=0.05, Delta, sigma, p=3 , voile
     if(!(voi %in% colnames(X)) || is.null(voi)){
       stop(paste0("voi not found! \n Try: ", paste0(gsub("[`]","",colnames(X)),collapse = ", ") ) )
     }
-    E <- equilibrate_matrix(X)
+    E <- Collinearity::equilibrate_matrix(X)
     trouble <- solve(t(E) %*% E)[voi,voi]
     voilen  <- var(X[,voi]) + mean(X[,voi])^2
     sigma <- stats::sigma(m)

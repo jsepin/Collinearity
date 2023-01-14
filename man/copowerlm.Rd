@@ -18,7 +18,7 @@
 \references{}
 \author{Jerome Sepin, Malgorzata Roos}
 \examples{
-# if a lm model is available the relevant parts are extracted
+# when a lm model is available the relevant parts are extracted
 m <- lm(data = iris, Sepal.Length ~.)
 voi <- "Petal.Length"
 copowerlm(power = 0.8,  n = NULL, alpha = 0.05,
