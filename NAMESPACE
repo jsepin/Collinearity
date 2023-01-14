@@ -3,7 +3,7 @@ export("vdp_svd",
        "Var_decom_mat.matrix",
        "Var_decom_mat.lm", 
        "equilibrate_matrix",
-       "n_finder",
+       "copowerlm",
        "cotograph",
        "cofingerprint")
 
