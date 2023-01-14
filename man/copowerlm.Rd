@@ -21,11 +21,13 @@ The underlying core of the funnction is the following equation:
 \text{power}=1-\texttt{pf}\left(\texttt{q=}\texttt{qf}\left(\texttt{p=}1-\alpha,\texttt{ df1=}1,\texttt{ df2=}n-p\right),
 \texttt{ df1=}1,\texttt{ df2=}n-p,\texttt{ ncp=} \left[\sum_{i=1}^{n}\boldsymbol{X}[i,j]^2\right]\cdot\frac{\Delta^2}{\hat\sigma^2 }\cdot\frac{1}{\left(\left(\boldsymbol{E^\top E}\right)^{-1}\right)[j,j]}\right)
 }
-with \eqn{\Delta}=\texttt{Delta}, \eqn{\hat\sigma}=\texttt{sigma}, \eqn{\left(\boldsymbol{E^\top E}\right)^{-1}\right)[j,j]}=\texttt{trouble} where \eqn{j} represents the position of the variable of interest (\texttt{voi}). Furthermore, \eqn{\boldsymbol{E}} represents the equilibrated design matrix \eqn{\boldsymbol{X}}. Moreover, it can be shown that the following holds:
+with \eqn{\Delta}=\texttt{Delta}, \eqn{\hat\sigma=\texttt{sigma}}, \eqn{\left(\boldsymbol{E^\top E}\right)^{-1}\right)[j,j]=\texttt{trouble}} where \eqn{j} represents the position of the variable of interest (\eqn{\texttt{voi}}). In systems without collinearity as it is for example in univariate regression models (also without intercept), \eqn{\texttt{trouble}} reduces to 1.
+
+Furthermore, \eqn{\boldsymbol{E}} represents the equilibrated design matrix \eqn{\boldsymbol{X}}. Moreover, it can be shown that the following holds:
 \deqn{
 \text{E}\left(\sum_{i=1}^{n}X_{ij}^2\right)=n\left(\text{Var}(X_{ij})+\text{E}(X_{ij})^2\right)
 }
-Thus, \texttt{trouble}
+Thus, \eqn{\texttt{voilen}} is taken to be \eqn{\text{Var}(\boldsymbol{X}[i,j])+\text{E}(\boldsymbol{X}[i,j])^2}. Note, that if we want the variable of interest to be binary, \eqn{X_{ij}} is Bernoulli distributed with probability to success is \eqn{p} which is also equals \eqn{\texttt{voilen}}.
 }
 \value{}
 \references{}
