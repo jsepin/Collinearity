@@ -18,6 +18,7 @@
 \references{}
 \author{Jerome Sepin, Malgorzata Roos}
 \examples{
+library(Collinearity)
 # when a lm model is available the relevant parts are extracted
 m <- lm(data = iris, Sepal.Length ~.)
 voi <- "Petal.Length"
