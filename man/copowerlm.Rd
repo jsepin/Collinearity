@@ -18,13 +18,12 @@
 \references{}
 \author{Jerome Sepin, Malgorzata Roos}
 \examples{
-library(Collinearity)
 # when a lm model is available the relevant parts are extracted
 m <- lm(data = iris, Sepal.Length ~.)
 voi <- "Petal.Length"
 copowerlm(power = 0.8,  n = NULL, alpha = 0.05,
           Delta = c(0.1, 0.2, 0.3), m = m, voi = voi)$n
-copowerlm(power = NULL, n = NULL, alpha = 0.05,
+copowerlm(power = NULL, n = NULL, alpha = 0.05, 
           Delta = c(0.1, 0.2, 0.3), m = m, voi = voi)$power
 
 # all components can also be given individually
@@ -32,7 +31,7 @@ sigma <- stats::sigma(m) # 0.3068261
 p <- ncol(model.matrix(m)) # 6
 voilen <- var(model.matrix(m)[,voi]) + mean(model.matrix(m)[,voi])^2 # 17.23884
 E <- equilibrate_matrix(model.matrix(m))
-trouble <- solve(t(E) %*% E)[voi,voi] # 128.8317
+trouble <- solve(t(E) \%*\% E)[voi,voi] # 128.8317
 copowerlm(power = 0.8, n = NULL, alpha = 0.05, Delta = c(0.1, 0.2, 0.3),
           sigma = sigma, p = p , voilen = voilen, trouble = trouble )
 }
