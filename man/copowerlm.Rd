@@ -4,16 +4,29 @@
 \description{Compute the power or determine the sampe size to obtain a target power.}
 \usage{copowerlm(power=NULL, n = NULL, alpha=0.05, Delta, sigma, p=3 , voilen=0.5, trouble = 1)}
 \arguments{
-  \item{power}{power of test (1 minus Type II error probability)}
-  \item{n}{number of observations in total}
-  \item{alpha}{significance level (Type I error probability)}
-  \item{Delta}{relevant effect of variable of interest}
-  \item{sigma}{experimental error}
-  \item{p}{number of parameters in whole model}
-  \item{voilen}{variable of interest length}
-  \item{trouble}{diagonal entry of the inverted squared equilibrated design matrix}
+  \item{power}{Power of test (1 minus Type II error probability)}
+  \item{n}{Number of observations in total}
+  \item{alpha}{Significance level (Type I error probability)}
+  \item{Delta}{Relevant effect of variable of interest}
+  \item{sigma}{Experimental error}
+  \item{p}{Number of parameters in whole model}
+  \item{voilen}{Variable of interest length}
+  \item{trouble}{Diagonal entry of the inverted squared equilibrated design matrix}
+  \item{m}{lm model. Default is NULL.}
+  \item{voi}{Variable of interest. Default is NULL.}
 }
-\details{}
+\details{
+The underlying core of the funnction is the following equation:
+$$
+\text{power}=1-\texttt{pf}\left(\texttt{q=}\texttt{qf}\left(\texttt{p=}1-\alpha,\texttt{ df1=}1,\texttt{ df2=}n-p\right),
+\texttt{ df1=}1,\texttt{ df2=}n-p,\texttt{ ncp=} \left[\sum_{i=1}^{n}\boldsymbol{X}[i,j]^2\right]\cdot\frac{\Delta^2}{\hat\sigma^2 }\cdot\frac{1}{\left(\left(\boldsymbol{E^\top E}\right)^{-1}\right)[j,j]}\right)
+$$
+with $\Delta$=\texttt{Delta}, $\hat\sigma$=\texttt{sigma}, $\left(\boldsymbol{E^\top E}\right)^{-1}\right)[j,j]$=\texttt{trouble} where $j$ represents the position of the variable of interest (\texttt{voi}). Furthermore, $\boldsymbol{E}$ represents the equilibrated design matrix $\boldsymbol{X}$. Moreover, it can be shown that the following holds:
+$$
+\text{E}\left(\sum_{i=1}^{n}X_{ij}^2\right)=n\left(\text{Var}(X_{ij})+\text{E}(X_{ij})^2\right)
+$$
+Thus, \texttt{trouble}
+}
 \value{}
 \references{}
 \author{Jerome Sepin, Malgorzata Roos}
