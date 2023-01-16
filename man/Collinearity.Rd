@@ -1,4 +1,4 @@
-\name{Collinearity}
+\name{Collinearity-package}
 \alias{Collinearity-package}
 \title{Collinearity}
 \description{Model choice citeria provide inference regarding the fitness of different models. Collinearity is a phenomenon known to deteriorate the model fitness and causing missleading estimate from the least square estimates approach. With this package, we provide tools to search for collinearity among different models.}
