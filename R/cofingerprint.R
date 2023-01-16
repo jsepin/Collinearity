@@ -32,7 +32,7 @@ cofingerprint <- function(m,
                     cex.prop  = 1
 ){
   # par reset
-  on.exit(par(par(no.readonly=TRUE)))
+  on.exit(par(par(no.readonly=TRUE)), add = TRUE)
   
   # Create Bootstraps
   va_decomp <- Collinearity::Var_decom_mat.lm(m, equilibration=TRUE)
