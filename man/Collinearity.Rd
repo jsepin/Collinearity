@@ -6,22 +6,16 @@
 \arguments{}
 \details{
 Package: Collinearity
-
 Type: Package
-
 Version: 1.1.2
-
 Date: 2023-1-10
- 
 License: GPL (>=2) 
-
 Depends: R (>= 3.5.0)
-
 }
 \value{}
 \references{}
 \author{Georgios Kazantzidis, Jerome Sepin ,Malgorzata Roos
 
-Maintainer: Georgios Kazantzidis <George_kazantzidis@outlook.com>
+Maintainer: Georgios Kazantzidis <George_kazantzidis@outlook.com>, Jerome Sepin <jerome.sepin@gmail.com>
 }
 
