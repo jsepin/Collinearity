@@ -32,7 +32,8 @@ cotograph <- function(m,voi,
                       mar = c(2.1, 2.1,2.1, 2.1)
 ){
   # par reset
-  on.exit(par(par(no.readonly=TRUE)), add = TRUE)
+  old.pars <- par(no.readonly=TRUE)
+  on.exit(par(old.pars), add=TRUE)
   
   X <- model.matrix(m)
   
