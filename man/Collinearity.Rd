@@ -1,5 +1,5 @@
-\name{Collinearity}
-\alias{Collinearity}
+\name{1}
+\alias{2}
 \title{Collinearity}
 \description{Model choice citeria provide inference regarding the fitness of different models. Collinearity is a phenomenon known to deteriorate the model fitness and causing missleading estimate from the least square estimates approach. With this package, we provide tools to search for collinearity among different models.}
 \usage{}
