@@ -31,10 +31,7 @@ cotograph <- function(m,voi,
                       lwdtovoi = 5, 
                       mar = c(2.1, 2.1,2.1, 2.1)
 ){
-  # par reset
-  old.pars <- par(no.readonly=TRUE)
-  on.exit(par(old.pars), add=TRUE)
-  
+
   X <- model.matrix(m)
   
   # equilibrate if needed

@@ -18,8 +18,12 @@
 \details{
 The underlying core of the function is the following equation:
 \deqn{
-\text{power}=1-\texttt{pf}\left(\texttt{q=}\texttt{qf}\left(\texttt{p=}1-\alpha,\texttt{ df1=}1,\texttt{ df2=}n-p\right),
-\texttt{ df1=}1,\texttt{ df2=}n-p,\texttt{ ncp=} \left[\sum_{i=1}^{n}\boldsymbol{X}[i,j]^2\right]\cdot\frac{\Delta^2}{\hat\sigma^2 }\cdot\frac{1}{\left[\left(\boldsymbol{E^\top E}\right)^{-1}\right][j,j]}\right)
+\text{power}=1-\texttt{pf}\Biggl( \\
+\texttt{q=}\texttt{qf}\left(\texttt{p=}1-\alpha, \\
+\texttt{ df1=}1,\texttt{ df2=}n-p\right), \\
+\texttt{ df1=}1,\texttt{ df2=}n-p, \\
+\texttt{ ncp=} \left[\sum_{i=1}^{n}\boldsymbol{X}[i,j]^2\right]\cdot\frac{\Delta^2}{\hat\sigma^2 }\cdot\frac{1}{\left[\left(\boldsymbol{E^\top E}\right)^{-1}\right][j,j]} \\
+\Biggr)
 }
 with \eqn{\Delta=\texttt{Delta}}, \eqn{\hat\sigma=\texttt{sigma}}, \eqn{\left[\left(\boldsymbol{E^\top E}\right)^{-1}\right][j,j]=\texttt{trouble}} where \eqn{j} represents the position of the variable of interest (\eqn{\texttt{voi}}).
 Furthermore, \eqn{\boldsymbol{E}} represents the equilibrated design matrix \eqn{\boldsymbol{X}}.
@@ -51,5 +55,10 @@ E <- equilibrate_matrix(model.matrix(m))
 trouble <- solve(t(E) \%*\% E)[voi,voi] # 128.8317
 copowerlm(power = 0.8, n = NULL, alpha = 0.05, Delta = c(0.1, 0.2, 0.3),
           sigma = sigma, p = p , voilen = voilen, trouble = trouble )
+
+# the power with the data currently at hand can also be determined
+copowerlm(power = NULL, n = dim(iris)[1], alpha = 0.05, Delta = c(0.1, 0.2, 0.3),
+          sigma = sigma, p = p , voilen = voilen, trouble = trouble )
+          
 }
 

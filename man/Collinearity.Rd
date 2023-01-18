@@ -19,7 +19,7 @@ Depends: R (>= 3.5.0)
 }
 \value{}
 \references{}
-\author{Georgios Kazantzidis, Jerome Sepin ,Malgorzata Roos
+\author{Georgios Kazantzidis, Jerome Sepin, Malgorzata Roos
 
 Maintainer: 
 
