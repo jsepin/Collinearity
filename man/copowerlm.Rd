@@ -19,22 +19,12 @@
 The underlying core of the function is the following equation:
 \deqn{
 \text{power}=1-\texttt{pf}\Bigl( 
-\texttt{q=}\texttt{qf}\left(\texttt{p=}1-\alpha, \\
+\quad\,\texttt{ q=}\texttt{qf}\left(\texttt{p=}1-\alpha, \\
 \texttt{df1=}1,\texttt{ df2=}n-p\right), \\
 \texttt{df1=}1,\texttt{ df2=}n-p, \\
-\qquad\texttt{ncp=}\left[\sum_{i=1}^{n}\boldsymbol{X}[i,j]^2\right]\cdot\frac{\Delta^2}{\hat\sigma^2 }\cdot\frac{1}{\left[\left(\boldsymbol{E^\top E}\right)^{-1}\right][j,j]} 
+\qquad\qquad\qquad\qquad\quad\texttt{ncp=}\left[\sum_{i=1}^{n}\boldsymbol{X}[i,j]^2\right]\cdot\frac{\Delta^2}{\hat\sigma^2 }\cdot\frac{1}{\left[\left(\boldsymbol{E^\top E}\right)^{-1}\right][j,j]} 
 \Bigr)
 }
-
-\deqn{
-\begin{aligned}
-\text{power}&=1-\texttt{pf}\\
-            &=1-\texttt{pf}\\
-\texttt{df1=}&1,\texttt{ df2=}n-p\right)
-\end{aligned}
-}
-
-
 with \eqn{\Delta=\texttt{Delta}}, \eqn{\hat\sigma=\texttt{sigma}}, \eqn{\left[\left(\boldsymbol{E^\top E}\right)^{-1}\right][j,j]=\texttt{trouble}} where \eqn{j} represents the position of the variable of interest (\eqn{\texttt{voi}}).
 Furthermore, \eqn{\boldsymbol{E}} represents the equilibrated design matrix \eqn{\boldsymbol{X}}.
 In systems without collinearity as it is for example in univariate regression models (also without intercept), \eqn{\texttt{trouble}} reduces to 1.
