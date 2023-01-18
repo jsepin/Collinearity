@@ -31,6 +31,13 @@ or
 \textcolor{white}{\text{power}}=424\\
 \quad=424
 }
+or
+\begin{aligned}
+\text{power}&=424 \\
+&=424
+\end{aligned}
+
+
 with \eqn{\Delta=\texttt{Delta}}, \eqn{\hat\sigma=\texttt{sigma}}, \eqn{\left[\left(\boldsymbol{E^\top E}\right)^{-1}\right][j,j]=\texttt{trouble}} where \eqn{j} represents the position of the variable of interest (\eqn{\texttt{voi}}).
 Furthermore, \eqn{\boldsymbol{E}} represents the equilibrated design matrix \eqn{\boldsymbol{X}}.
 In systems without collinearity as it is for example in univariate regression models (also without intercept), \eqn{\texttt{trouble}} reduces to 1.
