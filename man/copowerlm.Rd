@@ -18,12 +18,17 @@
 \details{
 The underlying core of the function is the following equation:
 \deqn{
-\text{power}=1-\texttt{pf}\Biggl( \\
-\texttt{q=}\texttt{qf}\left(\texttt{p=}1-\alpha, \\
-\texttt{ df1=}1,\texttt{ df2=}n-p\right), \\
-\texttt{ df1=}1,\texttt{ df2=}n-p, \\
-\texttt{ ncp=} \left[\sum_{i=1}^{n}\boldsymbol{X}[i,j]^2\right]\cdot\frac{\Delta^2}{\hat\sigma^2 }\cdot\frac{1}{\left[\left(\boldsymbol{E^\top E}\right)^{-1}\right][j,j]} \\
-\Biggr)
+\text{power}=1-\texttt{pf}\Bigl( 
+\texttt{q=}&\texttt{qf}\left(\texttt{p=}1-\alpha, \\
+\texttt{df1=}&1,\texttt{ df2=}n-p\right), \\
+\texttt{df1=}&1,\texttt{ df2=}n-p, \\
+\texttt{ncp=}&\left[\sum_{i=1}^{n}\boldsymbol{X}[i,j]^2\right]\cdot\frac{\Delta^2}{\hat\sigma^2 }\cdot\frac{1}{\left[\left(\boldsymbol{E^\top E}\right)^{-1}\right][j,j]} 
+\Bigr)
+}
+or
+\deqn{
+\text{power}=424 \\
+\textcolor{white}{\text{power}}=424
 }
 with \eqn{\Delta=\texttt{Delta}}, \eqn{\hat\sigma=\texttt{sigma}}, \eqn{\left[\left(\boldsymbol{E^\top E}\right)^{-1}\right][j,j]=\texttt{trouble}} where \eqn{j} represents the position of the variable of interest (\eqn{\texttt{voi}}).
 Furthermore, \eqn{\boldsymbol{E}} represents the equilibrated design matrix \eqn{\boldsymbol{X}}.
