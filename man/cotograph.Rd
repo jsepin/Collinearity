@@ -24,6 +24,7 @@
 \references{}
 \author{Jerome Sepin, Malgorzata Roos}
 \examples{
+dev.off(); par(mfrow = c(2,1))
 m <- lm(data = iris, Sepal.Length ~.)
 cotograph(m=m, voi = "Petal.Length")
 
@@ -31,6 +32,7 @@ cotograph(m=m, voi = "Petal.Length")
 cotograph(m=m, voi = "Petal.Length", equilibrate = TRUE)
 
 # with sub-R2 values added
+dev.off()
 m <- glm(data = iris, I(iris$Species=="versicolor") ~. ,family = binomial)
 cotograph(m=m, voi = "Petal.Length", subR2 = TRUE)
 }

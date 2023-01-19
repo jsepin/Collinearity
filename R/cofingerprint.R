@@ -31,6 +31,8 @@ cofingerprint <- function(m,
                     cex.sub = 1,
                     cex.prop  = 1
 ){
+  old.pars <- par(no.readonly=TRUE)
+  dev.off()
 
   # Create Bootstraps
   va_decomp <- Collinearity::Var_decom_mat.lm(m, equilibration=TRUE)
@@ -147,7 +149,7 @@ cofingerprint <- function(m,
     prop <- round(sum(prop)/length(prop),2)
     if(i ==1){
       # plot frame
-      plot(NA,NA, ylim = ylim, xlim = xlim)
+      plot(NA,NA, ylim = ylim, xlim = xlim, ylab = "", xlab = "")
       
       # variance decomposition proportions
       lab <- data.frame(
@@ -178,7 +180,7 @@ cofingerprint <- function(m,
 
     }else{
       # plot frame
-      plot(NA,NA, ylim = ylim, xlim = xlim, yaxt = "n", ylab ="")
+      plot(NA,NA, ylim = ylim, xlim = xlim, yaxt = "n", ylab ="", xlab = "")
       # variance decomposition proportions
       lab <- data.frame(
         "id" = 1:nrow(va_decomp),
@@ -220,5 +222,5 @@ cofingerprint <- function(m,
       return(results)
     }
   }
-  
+  on.exit(par(old.pars), add=TRUE)
 }
