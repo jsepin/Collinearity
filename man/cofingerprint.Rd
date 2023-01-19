@@ -35,4 +35,5 @@ cofingerprint(m, B = 100, ydi = 2)
 # returndata: for time consuming bootstraps 
 dd <- cofingerprint(m, B = 100, returndata = TRUE)
 cofingerprint(m, B = 100, returndata = dd, ncon = 3)
+
 }
