@@ -1,7 +1,7 @@
 \name{cotograph}
 \alias{cotograph}
 \title{Collinearity graph}
-\description{Compute the Wald statistics and the condition numbers of bootstrap samples to check the robustness of the results.}
+\description{Computes the relation of the variable of interest (voi) to the remaining variables as an alternative diagnostic tool to assess which varibles are responsible to the detrimental effect of collinearity that the variable of interest may suffer from.}
 \usage{cotograph(m, voi, equilibrate = FALSE, main = "Graph: Relation of explanatory variables\n Multivariable fitted Model", cex.node = 1, cex.tovoi = 1, cex.main = 1, col.edge.line = "blue", col.edge.text = "blue", col.node.voi = "green", col.node.nonvoi = "lightblue", radius_circle = 0.2, subR2 = FALSE, lwdtovoi = 1, mar = c(2.1, 2.1,2.1, 2.1))}
 \arguments{
   \item{m}{Model fitted}
@@ -15,7 +15,7 @@
   \item{col.node.voi}{Color of the voi node. Default is green.}
   \item{col.node.nonvoi}{Color of non-voi node(s). Default is lightblue.}
   \item{radius_circle}{Size of node. Default is 0.2.}
-  \item{subR2}{Logical. If TRUE, the R2 values of the non-voi nodes are plotted as well. Default value is FALSE.}
+  \item{subR2}{Logical. If TRUE, the R2 values of the non-voi nodes are plotted as well. Default value is FALSE. These R2 value arise from the multiple linear regression where all other explanatory variables (apart from voi) are used.}
   \item{lwdtovoi}{Maximum linewidth of edges. Default is 5.}
   \item{mar}{Margin of the plot. c(2.1, 2.1,2.1, 2.1) }
 }
@@ -24,7 +24,8 @@
 \references{}
 \author{Jerome Sepin, Malgorzata Roos}
 \examples{
-dev.off(); par(mfrow = c(2,1))
+# dev.off()
+par(mfrow = c(2,1))
 m <- lm(data = iris, Sepal.Length ~.)
 cotograph(m=m, voi = "Petal.Length")
 
