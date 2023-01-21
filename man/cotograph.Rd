@@ -1,7 +1,7 @@
 \name{cotograph}
 \alias{cotograph}
 \title{Collinearity graph}
-\description{Computes the relation of the variable of interest (voi) to the remaining variables as an alternative diagnostic tool to assess which varibles are responsible to the detrimental effect of collinearity that the variable of interest may suffer from.}
+\description{Computes the relation of the variable of interest (voi) to the remaining variables as an alternative diagnostic tool. This helps to assess which varibles are responsible to the detrimental effect of collinearity that the variable of interest may suffer from.}
 \usage{cotograph(m, voi, equilibrate = FALSE, main = "Graph: Relation of explanatory variables\n Multivariable fitted Model", cex.node = 1, cex.tovoi = 1, cex.main = 1, col.edge.line = "blue", col.edge.text = "blue", col.node.voi = "green", col.node.nonvoi = "lightblue", radius_circle = 0.2, subR2 = FALSE, lwdtovoi = 1, mar = c(2.1, 2.1,2.1, 2.1))}
 \arguments{
   \item{m}{Model fitted}
@@ -33,7 +33,8 @@ cotograph(m=m, voi = "Petal.Length")
 cotograph(m=m, voi = "Petal.Length", equilibrate = TRUE)
 
 # with sub-R2 values added
-dev.off()
+# dev.off()
+par(mfrow = c(1,1))
 m <- glm(data = iris, I(iris$Species=="versicolor") ~. ,family = binomial)
 cotograph(m=m, voi = "Petal.Length", subR2 = TRUE)
 }
