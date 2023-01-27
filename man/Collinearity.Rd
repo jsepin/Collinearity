@@ -15,15 +15,15 @@ Type: Package
 
 Version: 1.1.2
 
-Date: 2023-1-10
+Date: 2023-2-27
 
 License: GPL (>=2) 
 
-Depends: R (>= 3.5.0)
+Depends: R (>= 4.2.2)
 }
 \value{}
 \references{
-Belsley, D. A. (1991). \eqn{\textit{Conditioning Diagnostics}} . Probability & Mathematical Statistics S. John
+Belsley, D. A. (1991). \eqn{\textit{Conditioning Diagnostics: Collinearity and Weak Data in Regression}} . Probability & Mathematical Statistics S. John
 Wiley & Sons, Nashville, TN.
 }
 \author{Georgios Kazantzidis, Jerome Sepin, Malgorzata Roos
